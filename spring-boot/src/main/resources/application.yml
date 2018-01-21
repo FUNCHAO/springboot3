@@ -1,7 +1,11 @@
 ##yml文件和properties文件都可以，这个更简便
 server:
+  tomcat:
+    uri-encoding: UTF-8
   port: 8080
-  context-path: /spring-boot 
+  context-path: /spring-boot
+  session:
+    timeout: 10 #话过期时间，单位s
 hello: 这个可以传值到controller
 ##也可以这样配置类似json，可以和hello一样在controller中取值
 context: "hello: ${hello},nihao:nihao"
@@ -22,4 +26,14 @@ spring:
     hibernate:
       ddl-auto: none ##create运行时根据entity类上注解自动创建表
     show-sql: true #控制台打印sql语句
- 
+  http:
+    encoding:         ##解
+      charset: UTF-8 ###决         404.html乱码，其它html不需要设置这个也不会乱码
+      force: true ######乱
+      enabled: true ####码
+  mvc:
+    favicon:
+      enabled: false
+  #日志     
+logging:
+  file: D:/mylog/log.log   

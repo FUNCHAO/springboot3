@@ -1,11 +1,63 @@
 <!DOCTYPE html>
-<html>
+<html ng-app xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="UTF-8">
+<meta content="text/html;charset=UTF-8"/>
 <title>Insert title here</title>
+	<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+  <script th:src="@{/js/jquery.js}"></script>
+  <script th:src="@{/js/bootstrap.min.js}"></script>
+  <script th:src="@{/js/angular.min.js}"></script>
 </head>
 <body>
 	<h1>hello fc</h1>
-	<h1>${name}</h1>
+	<span th:text="${name}">hellohello:</span>
+	<form method="get" action="index?name=我是挑战过来的！！！">
+		name:<input type="text" name="name"/><br/>
+		<input type="submit" value="提交"/>
+	</form>
+	<!--angular  -->
+	<input type="text" ng-model="yourName" placeholder="输入你的名字"/><br/>
+	<h1>你好：{{yourName}}</h1>
+	
+	
+	<div class="row">
+		<div class="col-md-1">col-md-1</div>
+		<div class="col-md-1">col-md-1</div>
+		<div class="col-md-1">col-md-1</div>
+		<div class="col-md-1">col-md-1</div>
+		<div class="col-md-1">col-md-1</div>
+		<div class="col-md-1">col-md-1</div>
+		<div class="col-md-1">col-md-1</div>
+		<div class="col-md-1">col-md-1</div>
+		<div class="col-md-1">col-md-1</div>
+		<div class="col-md-1">col-md-1</div>
+		<div class="col-md-1">col-md-1</div>
+		<div class="col-md-1">col-md-1</div>
+		<div class="col-md-1">col-md-1</div>
+		<div class="col-md-1">col-md-1</div>
+	
+	</div>
+	<div class="row">
+		<div class="col-md-8">coll-md-8</div>
+		<div class="col-md-4">coll-md-4</div>
+	</div>
+	<div class="row">
+		<div class="col-md-4">coll-md-4</div>
+		<div class="col-md-4">coll-md-4</div>
+		<div class="col-md-4">coll-md-4</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6">coll-md-6</div>
+		<div class="col-md-4">coll-md-4</div>
+	</div>
+	
+	
+	
+	
+	<!-- 注意script写法 -->
+	<script th:inline="javascript">
+		var name=[[${name}]];
+		console.info(name);
+	</script>
 </body>
 </html>

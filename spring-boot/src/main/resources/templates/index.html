@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta content="text/html;charset=UTF-8"/>
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>hello fc</h1>
+	<span th:text="${name}"></span>
+	
+	<!-- 注意script写法 -->
+	<script th:inline="javascript">
+		var name=[[${name}]];
+		console.info(name);
+	</script>
+</body>
+</html>
