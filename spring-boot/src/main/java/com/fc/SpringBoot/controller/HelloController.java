@@ -15,7 +15,7 @@ public class HelloController {
 	private String hello;
 	@Autowired
 	private Student student;
-	@RequestMapping(value="/hello",method=RequestMethod.GET)
+	@RequestMapping(value="/hello3",method=RequestMethod.GET)
 	public String hello(){
 		
 		return hello;

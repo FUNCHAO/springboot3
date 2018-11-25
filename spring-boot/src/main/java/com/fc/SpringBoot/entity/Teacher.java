@@ -14,6 +14,7 @@ public class Teacher {
 	//校验，在插入入口处校验
 	@Min(value=18,message="低于18不能当老师")
 	private Integer age;
+	private String password;
 	//必须要无参的构造方法，否则报错
 	public Teacher() {
 	
@@ -35,6 +36,12 @@ public class Teacher {
 	}
 	public void setId(Integer id) {
 		this.id = id;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
 	}
 	
 }

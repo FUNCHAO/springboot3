@@ -76,8 +76,22 @@
         	<dependency>
              <groupId>org.springframework.boot</groupId>
               <artifactId>spring-boot-starter-logging</artifactId>
-           </dependency>
-    
+           </dependency>   
+           <!--  依赖引入就会出现登录验证-->      
+		  <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+          <!-- 在thymeleaf中扩展spring secutity -->
+        <dependency>
+            <groupId>org.thymeleaf.extras</groupId>
+            <artifactId>thymeleaf-extras-springsecurity4</artifactId>
+        </dependency>
+        <dependency>  
+		    <groupId>com.alibaba</groupId>  
+		    <artifactId>fastjson</artifactId>  
+		    <version>1.2.41</version>  
+		</dependency>  
   </dependencies>
   <build>
    		<plugins>
