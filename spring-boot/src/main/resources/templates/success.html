@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+		 xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+<meta content="text/html;charset=UTF-8"/>
+<title>Insert title here</title>
+<style>
+	#teacherTable{
+		width: 100% !important;
+		table-layout: fixed;
+	}
+	#teacherThead{
+		display：table-header-group;
+	}
+	#teacherTable td{ /*数据表格标题文字居中*/
+		text-align: center;
+		vertical-align: middle!important;
+/* 		border-style: none; border-left-style: none;
+ */		
+	}
+	
+</style>
+<script th:src="@{/js/jquery.js}"></script>
+  <script th:src="@{/js/teacher/teacher.js}"></script>
+  <script th:src="@{/js/jquery.dataTables.min.js}"></script>
+  <link rel="stylesheet" th:href="@{/css/jquery.dataTables.min.css}" />
+</head>
+<body>
+	<div>hello:lx</div>
+	<!--  认证通过-->
+	<div sec:authorize="isAuthenticated()">
+		<h2>您好：
+			<span sec:authentication="name"></span>	
+			，您的角色有：
+			<span sec:authentication="principal.authorities"></span>	
+		</h2>
+		<form th:action="@{/logout}"method="post">
+			<input type='submit' value="注销"/>
+		</form>
+	</div>
+	<div sec:authorize="!isAuthenticated()">
+		游客，请登录
+	</div>
+	<div sec:authorize="hasRole('ADMIN')">
+		<div><a th:href="@{/index}" >教师列表 ADMIN权限才能看见</a></div>
+		<div>ADMIN权限才能看见</div>
+	</div>
+	<div sec:authorize="hasRole('ADMIN2')">
+		<div>ADMIN2权限才能看见</div>
+	</div>
+</body>
+</html>
