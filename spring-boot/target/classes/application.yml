@@ -19,7 +19,7 @@ spring:
     mode: LEGACYHTML5
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/springboot
+    url: jdbc:mysql://127.0.0.1:3306/springboot?useUnicode=true&characterEncoding=utf8
     username: root
     password: ""
   jpa:
@@ -34,6 +34,11 @@ spring:
   mvc:
     favicon:
       enabled: false
+##################################spring batch#####################################
+  batch:
+    job:
+      enabled: false ##关闭自动执行的job
+##################################spring batch#####################################
   #日志     
 logging:
-  file: D:/mylog/log.log   
+  file: D:/mylog/log.log
